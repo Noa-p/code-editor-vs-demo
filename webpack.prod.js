@@ -11,7 +11,6 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
 
 module.exports = merge(common, {
   mode: 'production',
-  devtool: 'none',
   plugins: [
     new CleanWebpackPlugin(),
     // new PurgeCSSPlugin({

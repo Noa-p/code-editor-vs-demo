@@ -152,16 +152,16 @@ module.exports = {
             useShortDoctype: true,
           },
     }),
-    new CopyPlugin({
-      patterns: [
-        {
-          context: path.resolve(PROJECT_PATH, './public'),
-          from: '*',
-          to: path.resolve(PROJECT_PATH, './dist'),
-          toType: 'dir',
-        },
-      ],
-    }),
+    // new CopyPlugin({
+    //   patterns: [
+    //     {
+    //       context: path.resolve(PROJECT_PATH, './public'),
+    //       from: '*',
+    //       to: path.resolve(PROJECT_PATH, './dist'),
+    //       toType: 'dir',
+    //     },
+    //   ],
+    // }),
     new WebpackBar({
       name: isDev ? '正在启动' : '正在打包',
       color: '#fa8c16',
