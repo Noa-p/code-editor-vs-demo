@@ -16,6 +16,11 @@ import "codemirror/addon/hint/javascript-hint.js";
 import "codemirror/addon/hint/show-hint.js";
 import "codemirror/addon/hint/show-hint.css";
 import "codemirror/addon/selection/active-line.js";
+import "codemirror/addon/selection/mark-selection.js";
+import "codemirror/addon/search/match-highlighter.js";
+// import "codemirror/addon/search/matchesonscrollbar.js";
+// import "codemirror/addon/search/searchcursor.js";
+// import "codemirror/addon/scroll/annotatescrollbar.js";
 import "codemirror/theme/abbott.css";
 import "./index.css";
 
@@ -103,7 +108,7 @@ const App = () => {
       }
 
       mycm = CodeMirror(cmRef.current, {
-        value: "function myScript(){return 100;}\n",
+        value: "function myScript() {\n  return 100;\n}\n",
         mode: {name: "javascript", typescript: true},
         lineNumbers: true,
         tabSize: 2,
@@ -112,6 +117,8 @@ const App = () => {
           completeSingle: false,
         },
         styleActiveLine: true,
+        styleSelectedText: true,
+        highlightSelectionMatches: {showToken: /\w/, annotateScrollbar: true},
         // theme: "abbott",
         ///////////////////////////////
         lineSeparator: null,
