@@ -15,6 +15,8 @@ import "codemirror/addon/dialog/dialog.css";
 import "codemirror/addon/hint/javascript-hint.js";
 import "codemirror/addon/hint/show-hint.js";
 import "codemirror/addon/hint/show-hint.css";
+import "codemirror/addon/selection/active-line.js";
+import "codemirror/theme/abbott.css";
 import "./index.css";
 
 const App = () => {
@@ -109,9 +111,10 @@ const App = () => {
         hintOptions: { 
           completeSingle: false,
         },
+        styleActiveLine: true,
+        // theme: "abbott",
         ///////////////////////////////
         lineSeparator: null,
-        theme: "abbott",
         indentUnit: 2,
         smartIndent: true,
         indentWithTabs: false,
